@@ -4,7 +4,7 @@
 └── source/
     └── icons/
         ├── tg.svg
-        ├── vk.svg
+        ├── vk-social-icon.svg
         └── yt.svg
 ```
 
