@@ -1,1 +1,31 @@
-/* здесь используйте глобальные переменные */
+
+/* Fonts */
+$primary-font: "Montserrat", "Arial", sans-serif;
+
+/* Base colors */
+$base-white: #FFFFFF;
+$base-gray: #BDBDBD;
+$base-black:#333333;
+$base-primary: #7859CF;
+$base-secondary:#F0EBFF;
+
+/* Alt colors */
+$primary-opacity: rgba(120, 89, 207, 0.25);
+$primary-lighter: #9070EC;
+$primary-darker: #593CAC;
+$light-gray: #E2E2E2;
+
+/* Background colors */
+$lightest-grey: #F8F8F8;
+$flat-white: #F3EBE1;
+$lavender-latte: #EAE6FC;
+$espresso: #E5E6E8;
+
+
+$phone-width: 320px;
+$tablet-width: 768px;
+$desktop-width: 1440px;
+
+
+$min-width-container: 320px;
+$max-width-container: 1440px;
