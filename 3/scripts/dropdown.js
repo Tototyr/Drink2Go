@@ -1,0 +1,1 @@
+var t=document.querySelector(".navigation"),o=document.querySelector(".navigation__toggle"),n=()=>{t.classList.toggle("navigation--closed"),t.classList.toggle("navigation--open")},i=()=>{o.addEventListener("click",n)};export{i as initializeDropdown};
