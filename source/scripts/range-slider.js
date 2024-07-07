@@ -23,4 +23,3 @@ if (rangeSlider) {
 rangeSlider.noUiSlider.on('update', (values, handle) => {
   rangeInputs[handle].value = Math.round(values[handle]);
 });
-

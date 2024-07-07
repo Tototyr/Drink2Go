@@ -3,4 +3,3 @@ import { initializeSlider } from './slider.js';
 
 initializeDropdown();
 initializeSlider();
-
