@@ -3,7 +3,21 @@
 @import "./common/mixins.scss";
 @import "./common/global.scss";
 @import "./common/fonts.scss";
-
+@import "./common/visually-hidden.scss";
+@import "./common/button.scss";
 
 /* BLOCKS */
+@import "./blocks/navigation.scss";
+@import "./common/container.scss";
 @import "./blocks/header.scss";
+@import "blocks/carousel";
+@import "./blocks/controls.scss";
+@import "blocks/features";
+@import "./blocks/section.scss";
+@import "./blocks/form.scss";
+@import "./blocks/catalog.scss";
+@import "./blocks/footer.scss";
+@import "./blocks/site-list.scss";
+@import "./blocks/map.scss";
+@import "./blocks/pagination.scss";
+@import "./blocks/nouislider.scss";

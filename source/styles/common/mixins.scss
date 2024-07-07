@@ -9,3 +9,14 @@
     src: $font-src;
   }
 }
+
+@mixin font-style($font-size, $line-height, $font-weight: 400) {
+  font-family: variables.$primary-font;
+  font-size: $font-size;
+  line-height: $line-height;
+  font-style: normal;
+  font-weight: $font-weight;
+}
+
+
+

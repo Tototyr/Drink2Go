@@ -1,0 +1,72 @@
+@use "../common/variables.scss";
+
+.site-list__item {
+  @media (min-width: variables.$tablet-width) {
+    height: 100%;
+  }
+
+  &--active {
+    border-bottom: 2px solid #7859cf;
+    margin-top: -1px;
+  }
+}
+
+.site__list {
+  text-transform: uppercase;
+  flex-wrap: wrap;
+  max-width: 600px;
+  margin: 0;
+  padding: 0;
+  font-family: inherit;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 16px;
+  list-style: none;
+  display: flex;
+
+  @media (max-width: 767px) {
+    flex-direction: column;
+  }
+
+  @media (min-width: variables.$desktop-width ){
+      gap: 20px;
+  }
+
+}
+
+.site-list__link {
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: .02em;
+  color: #333;
+  background-color: #fff;
+  font-family: Montserrat, Arial, sans-serif;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 16px;
+  text-decoration: none;
+  display: block;
+  position: relative;
+  padding: 31px 17px 31px 23px;
+
+  @media (max-width: variables.$mobile-width) {
+    padding: 20px;
+  }
+
+  @media (max-width: variables.$desktop-width) {
+    padding:   29px 17px 28px 23px;
+  }
+
+  &:hover,
+  &:focus {
+    color: variables.$base-primary;
+  }
+
+  &:active {
+    color: variables.$base-primary;
+    background-color: variables.$base-secondary
+  }
+
+}

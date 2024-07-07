@@ -1,0 +1,116 @@
+@use "../common/variables.scss" as vars;
+@use "../common/mixins.scss" as mixins;
+
+.navigation {
+  @media (min-width: vars.$tablet-width) {
+    margin: 0 auto;
+  }
+
+  &__list {
+    @media (min-width: vars.$tablet-width) {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      list-style: none;
+      margin: 0 auto;
+      width: 100%;
+    }
+  }
+
+  &__controls {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  &--closed {
+    @media (min-width: vars.$mobile-width) {
+      display: none;
+    }
+
+    @media (min-width: vars.$tablet-width) {
+      flex-wrap: wrap;
+      padding: 0;
+      list-style: none;
+      display: flex;
+    }
+
+    ~ .navigation__toggle::before,
+    ~ .navigation__toggle::after {
+      content: "";
+      background-color: #333;
+      width: 16px;
+      height: 2px;
+      position: absolute;
+      transform: translateX(-50%);
+      box-shadow: 0 5px #333, 0 -6px #333;
+    }
+  }
+
+  &--open {
+    @media (min-width: vars.$mobile-width) {
+      display: block;
+      top: 100%;
+      width: 100%;
+      right: 0;
+      position: absolute;
+      z-index: 1;
+    }
+
+    ~ .navigation__toggle::before {
+      transform: translateX(-50%) rotate(-45deg);
+    }
+
+    ~ .navigation__toggle::after {
+      transform: translateX(-50%) rotate(45deg);
+    }
+  }
+
+  &__toggle {
+    cursor: pointer;
+    border: none;
+    width: 60px;
+    height: 60px;
+    margin-right: -20px;
+    position: relative;
+
+    &:active {
+      background-color: vars.$base-secondary;
+    }
+
+    @media (min-width: vars.$tablet-width) {
+      display: none;
+    }
+  }
+}
+
+.navigation-topic__title {
+  padding-top: 21px;
+  padding-bottom: 17px;
+  color: #7859cf;
+  letter-spacing: .02em;
+  @include mixins.font-style(14px, 20px, 700);
+
+  @media (min-width: vars.$desktop-width) {
+    padding-top: 7px;
+  }
+}
+
+.navigation-topic__item-link{
+  &:hover,
+  &:focus {
+    color: $base-primary;
+  }
+}
+
+.navigation-topic__item {
+  margin-bottom: 16px;
+}
+
+.contacts {
+  margin-bottom: 20px;
+}
+
+.link {
+  background: #fff;
+}

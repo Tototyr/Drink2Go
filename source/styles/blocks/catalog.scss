@@ -1,0 +1,219 @@
+@use "../common/variables.scss";
+@use "../common/mixins.scss";
+
+.catalog__container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 80px 20px 0;
+
+  @media (min-width: variables.$tablet-width) {
+    margin-bottom: 45px;
+  }
+
+  @media (min-width: variables.$desktop-width) {
+    grid-template-columns: 318px 1fr;
+    grid-template-areas:
+      "title title title"
+      "description description description"
+      "form filter filter"
+      "form cards cards"
+      "form pagination pagination";
+    column-gap: 30px;
+    display: grid;
+    padding: 105px 40px 0;
+    margin-bottom: 75px;
+  }
+}
+
+.catalog {
+  background-color: #f8f8f8;
+  padding-bottom: 44px;
+}
+
+.catalog__title {
+  grid-area: title;
+}
+
+.catalog__form {
+  margin-bottom: 40px;
+
+  @media (min-width: variables.$desktop-width) {
+    flex-direction: column;
+    display: flex;
+    grid-area: form;
+    margin-bottom: 29px;
+  }
+}
+
+.catalog__sorting-title {
+  @include mixins.font-style(16px, 24px, 600);
+
+  @media (min-width: variables.$tablet-width) {
+    margin-right: 11px;
+  }
+}
+
+.catalog__sorting-wrapper {
+  position: relative;
+}
+
+.catalog__sorting--icon {
+  right: 12px;
+  position: absolute;
+  top: 14px;
+}
+
+.catalog__sorting {
+  background-color: inherit;
+  -webkit-appearance: none;
+  appearance: none;
+  color: #7859cf;
+  border: 0;
+  border-radius: 4px;
+  min-width: 165px;
+  min-height: 32px;
+  padding: 4px 30px 4px 10px;
+  @include mixins.font-style(16px, 24px, 600);
+
+  &:hover {
+    background-color: variables.$base-secondary;
+  }
+}
+
+.catalog__description {
+  grid-area: description;
+  margin-bottom: 20px;
+
+  @media (min-width: variables.$tablet-width) {
+    @include mixins.font-style(42px, 64px, 700);
+  }
+
+  @media (min-width: variables.$tablet-width) {
+    margin-bottom: 38px;
+  }
+}
+
+.catalog__filters {
+  justify-content: space-between;
+  padding-left: 3px;
+  grid-area: filter;
+  align-items: center;
+  display: flex;
+
+  @media (min-width: variables.$mobile-width) {
+    margin-bottom: 12px;
+  }
+
+  @media (min-width: variables.$tablet-width) {
+    justify-content: flex-end;
+  }
+}
+
+.catalog__navigation {
+  grid-area: pagination;
+}
+
+.catalog__list {
+  display: grid;
+  padding: 0;
+  grid-area: cards;
+
+  @media (max-width: variables.$mobile-width) {
+    grid-template-rows: repeat(6, 420px);
+    margin-bottom: 45px;
+    gap: 20px;
+  }
+
+  @media (min-width: variables.$tablet-width) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    padding-top: 13px;
+    margin-bottom: 70px;
+  }
+
+  @media (min-width: variables.$desktop-width) {
+    grid-template-columns: repeat(3, 1fr);
+    margin-bottom: 60px;
+  }
+}
+
+.catalog-card__title {
+  @media (min-width: variables.$mobile-width) {
+    margin-bottom: 4px;
+    @include mixins.font-style(18px, 32px, 700);
+  }
+
+  @media (min-width: variables.$tablet-width) {
+    @include mixins.font-style(24px, 36px, 700);
+  }
+}
+
+.catalog-card__image-link {
+  text-align: center;
+
+  @media (min-width: variables.$mobile-width) {
+    margin-bottom: 19px;
+  }
+
+  @media (min-width: variables.$tablet-width) {
+    margin-bottom: 26px;
+  }
+}
+
+.catalog-card__description {
+  @media (min-width: variables.$mobile-width) {
+    margin-bottom: 16px;
+  }
+
+  @media (min-width: variables.$tablet-width) {
+    margin-bottom: 20px;
+  }
+}
+
+.catalog-card__price-wrapper {
+  justify-content: space-between;
+  align-items: center;
+  display: flex;
+  position: relative;
+}
+
+.catalog-card__price {
+  margin-left: -2px;
+  @include mixins.font-style(20px, 32px, 700);
+}
+
+.catalog-card__link {
+  color: #333;
+  text-decoration: none;
+  display: block;
+
+  @media (min-width: variables.$tablet-width) {
+    margin-bottom: 5px;
+  }
+}
+
+.catalog-card {
+  background-color: variables.$base-white;
+  border-radius: 4px;
+  flex-direction: column;
+  padding: 43px 20px 20px;
+  display: flex;
+
+  @media (min-width: variables.$tablet-width) {
+    padding: 50px 30px 30px;
+  }
+}
+
+.catalog-card__button {
+  padding-left: 46px;
+  position: relative;
+}
+
+.catalog-card__button:after {
+  content: "";
+  background: url(../../icons/Union.svg) center no-repeat;
+  width: 20px;
+  height: 16px;
+  position: absolute;
+  left: 20px;
+}
