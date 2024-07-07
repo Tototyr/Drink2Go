@@ -1,0 +1,248 @@
+@use "../common/variables.scss";
+@use "../common/mixins.scss";
+
+.form__group {
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+.form {
+  @media (min-width: variables.$tablet-width) {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px 30px;
+    display: grid;
+  }
+}
+
+.form__filter-items {
+  margin: 0 0 30px;
+  padding: 0;
+  list-style: none;
+  @include mixins.font-style(16px, 24px, 400);
+
+  @media (min-width: variables.$desktop-width) {
+    margin: 0 0 20px;
+  }
+}
+
+.form__title {
+  margin-bottom: 20px;
+  margin-left: -2px;
+  @include mixins.font-style(16px, 24px, 600);
+}
+
+.form__filter-input-label {
+  cursor: pointer;
+  display: block;
+  position: relative;
+}
+
+.form__control-input:checked ~ .form__radio-mark:before {
+  display: block;
+}
+
+.form__radio-mark {
+  background-color: #fff;
+  border: 2px solid #bdbdbd;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.form__radio-mark ~ .form__text {
+  padding-left: 34px;
+}
+
+.form__filter-item {
+  margin-bottom: 20px;
+}
+
+.form__control-input {
+  &:checked ~ .form__radio-mark {
+    border: 2px solid variables.$base-primary;
+  }
+
+  &:checked ~ .form__radio-mark::before {
+    display: block;
+  }
+
+  &:checked:disabled ~ .form__radio-mark::before {
+    background-color: variables.$primary-opacity;
+    display: block;
+  }
+
+  &:focus:not(:disabled):not(:checked) ~ .form__radio-mark,
+  &:hover:not(:disabled):not(:checked) ~ .form__radio-mark {
+    border: 2px solid variables.$primary-lighter;
+  }
+
+  &:focus:not(:disabled):not(:checked) ~ .form__radio-mark::before,
+  &:hover:not(:disabled):not(:checked) ~ .form__radio-mark::before {
+    background-color: variables.$primary-opacity;
+    display: block;
+  }
+
+  &:disabled ~ .form__radio-mark {
+    border: 2px solid variables.$primary-opacity;
+  }
+
+  &:focus:not(:disabled):not(:checked) ~ .form__check-mark,
+  &:hover:not(:disabled):not(:checked) ~ .form__check-mark {
+    border: 2px solid variables.$primary-lighter;
+    background-color: variables.$primary-opacity;
+  }
+
+  &:checked ~ .form__check-mark {
+    background-color: variables.$base-primary;
+  }
+
+  &:checked ~ .form__check-mark::before {
+    left: 71%;
+  }
+
+  &:checked:disabled ~ .form__check-mark::before {
+    background-color: variables.$light-gray;
+  }
+
+  &:disabled ~ .form__check-mark {
+    background-color: variables.$light-gray;
+  }
+
+  &:disabled ~ .form__text {
+    color: variables.$base-gray;
+  }
+}
+
+.form__radio-mark:before {
+  content: "";
+  background-color: #7859cf;
+  border-radius: 50%;
+  width: 16px;
+  height: 16px;
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.form__control-input:disabled ~ .form__radio-mark {
+  border: 2px solid variables.$base-gray;
+}
+
+.form__control-input:checked ~ .form__check-mark:before {
+  left: 71%;
+}
+
+.form__control-input:checked ~ .form__check-mark {
+  background-color: #7859cf;
+}
+
+.form__check-mark ~ .form__text {
+  padding-left: 52px;
+}
+
+.form__check-mark {
+  background-color: #bdbdbd;
+  border-radius: 12px;
+  width: 42px;
+  height: 24px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.form__check-mark:before {
+  content: "";
+  background-color: #fff;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: 50%;
+  left: 30%;
+  transform: translate(-50%, -50%);
+}
+
+.form__button {
+  @include mixins.font-style(16px, 24px, 400);
+
+  @media (min-width: variables.$desktop-width) {
+    width: 100%;
+  }
+}
+
+.button--primary {
+  color: #fff;
+  background-color: #7859cf;
+}
+
+.button--secondary {
+  color: #7859cf;
+  background-color: #fff;
+}
+
+.form__group--buttons {
+  gap: 20px;
+  display: flex;
+  flex-direction: column;
+
+  @media (min-width: variables.$tablet-width) {
+    flex-direction: row;
+    grid-column: 1 / -1;
+    justify-content: center;
+  }
+
+  @media (min-width: variables.$desktop-width) {
+    flex-direction: row;
+    grid-column: 1 / -1;
+    justify-content: center;
+    padding-top: 10px;
+  }
+}
+
+.form__slider-inputs {
+  background-image: linear-gradient(to top, #bdbdbd, #bdbdbd);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 8px 2px;
+  justify-content: space-between;
+  margin-bottom: 31px;
+  display: flex;
+
+  @media (min-width: variables.$tablet-width) {
+    margin-bottom: 20px;
+  }
+}
+
+.form__slider {
+  padding: 0 12px;
+}
+
+.form__slider-input {
+  text-align: center;
+  -webkit-appearance: textfield;
+  appearance: textfield;
+  background-color: #fff;
+  border: 2px solid #9070ec;
+  border-radius: 4px;
+  height: 40px;
+  padding: 8px 10px;
+  @include mixins.font-style(16px, 24px, 500);
+
+  @media (min-width: variables.$mobile-width) {
+    width: 118px;
+  }
+
+  @media (min-width: variables.$tablet-width) {
+    width: 87px;
+  }
+
+  @media (min-width: variables.$desktop-width) {
+    width: 134px;
+  }
+}

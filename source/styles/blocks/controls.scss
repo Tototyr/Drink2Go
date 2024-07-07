@@ -1,0 +1,55 @@
+@use "../common/variables.scss";
+
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: end;
+
+  @media (min-width: variables.$desktop-width) {
+    gap: 15px;
+    margin-left: 30px;
+  }
+}
+
+.controls__link {
+  color: #333;
+  text-transform: uppercase;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  display: flex;
+  width: 60px;
+  height: 60px;
+
+  &:hover,
+  &:focus {
+    color: variables.$base-primary;
+  }
+
+  &:active {
+    color: variables.$base-primary;
+    background-color: variables.$base-secondary;
+  }
+
+  @media (min-width: variables.$desktop-width) {
+    gap: 8px;
+    width: auto;
+    height: auto;
+    padding: 22px;
+  }
+}
+
+.controls__item-title {
+  display: none;
+
+  @media (min-width: variables.$desktop-width) {
+    display: block;
+    text-transform: uppercase;
+    letter-spacing: .02em;
+    font-family: Montserrat, Arial, sans-serif;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 16px;
+  }
+}
